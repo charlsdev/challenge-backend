@@ -1,0 +1,15 @@
+@api = http://localhost:4000
+
+### View page welcome
+GET {{api}}
+
+### Register student
+POST {{api}}/student
+Content-Type: application/json
+{
+   "apellidos": "Villacreses",
+   "nombres": "Carlos",
+   "fechaNacimiento": "23-09-1998",
+   "ciudad": "Ecuador",
+   "correo": "carlos@gmail.com"
+}
