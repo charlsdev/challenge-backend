@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+   mysqldb:
+      container_name: mysqldb
+      image: mysql
+      command: --default-authentication-plugin=mysql_native_password
+      restart: always
+      environment:
+         MYSQL_DATABASE: 'coursesdb'
+         MYSQL_USER: 'dev'
+         MYSQL_PASSWORD: 'mypassdev'
+         MYSQL_ROOT_PASSWORD: 'devchallenge'
+      ports:
+         - '3306:3306'
+      volumes:
+         - my-db:/var/lib/mysql
+      logging:
+         driver: none
+
+volumes:
+   my-db:
+      driver: local
