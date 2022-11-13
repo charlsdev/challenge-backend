@@ -5,15 +5,25 @@ const {
    welcomePage,
    saveStudents,
    saveSchedule,
-   searchSchedule
+   searchSchedule,
+   signupUser
 } = require('../controllers/index.controllers')
 
+// const checkIfAuthenticated = require('../middleware/tokenFirebase')
+
+// Ruta inicial
 router.get('/', welcomePage)
 
-router.post('/student', saveStudents)
+// Ruta para loguearse
+router.post('/signup', signupUser)
 
-router.post('/schedule', saveSchedule)
+// Ruta para guardar un estudiante
+router.post('/student', /*checkIfAuthenticated,*/ saveStudents)
 
-router.get('/searchSchedule/:idStd', searchSchedule)
+// Ruta para registrar el horario de un estudiante
+router.post('/schedule', /*checkIfAuthenticated,*/ saveSchedule)
+
+//Ruta para listar en orden el horario asignado al estudiante
+router.get('/searchSchedule/:idStd', /*checkIfAuthenticated,*/ searchSchedule)
 
 module.exports = router

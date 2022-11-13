@@ -4,6 +4,29 @@ const {
    validate_fecha
 } = require('./regex')
 
+/**
+ * @description Función para validar que el correo y el password sean válidos y sin espacios en blancos
+ * @param {string} email
+ * @param {string} password
+ * @returns string
+ */
+const schemaSignup = (
+   email, password
+) =>  {
+   if (email === '' || password === '')
+      return 'Campos vacíos o con espacios'
+   if (!validate_email(email)) return 'Email no válido'
+}
+
+/**
+ * @description Función para validar que cada uno de los parámetros sean válidos y sin espacios en blancos
+ * @param {string} apellidos
+ * @param {string} nombres
+ * @param {date} fechaNacimiento
+ * @param {string} ciudad
+ * @param {string} correo
+ * @returns string
+ */
 const schemaStudents = (
    apellidos, nombres, fechaNacimiento, ciudad, correo
 ) =>  {
@@ -17,5 +40,6 @@ const schemaStudents = (
 }
 
 module.exports = {
+   schemaSignup,
    schemaStudents
 }
