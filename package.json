@@ -5,8 +5,8 @@
    "main": "index.js",
    "scripts": {
       "start": "node src/index.js",
-      "dev": "nodemon src/index.js",
-      "test": "jest --silent"
+      "dev": "nodemon src/index.js --config nodemon.json",
+      "test": "cross-env NODE_ENV=test && jest --silent --detectOpenHandles"
    },
    "keywords": [],
    "author": "",
@@ -14,12 +14,13 @@
    "dependencies": {
       "dotenv": "^16.0.3",
       "express": "^4.18.2",
+      "firebase-admin": "^11.2.1",
       "morgan": "^1.10.0",
-      "mssql": "^9.0.1",
       "mysql": "^2.18.1",
       "uuid": "^9.0.0"
    },
    "devDependencies": {
+      "cross-env": "^7.0.3",
       "eslint": "^8.27.0",
       "jest": "^29.3.1",
       "nodemon": "^2.0.20",
