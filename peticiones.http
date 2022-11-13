@@ -1,15 +1,58 @@
 @api = http://localhost:4000
 
+### Register user
+POST {{api}}/signup
+Content-Type: application/json
+
+{
+	"email": "pepito123@gmail.com",
+	"password": "dev12345@"
+}
+
 ### View page welcome
 GET {{api}}
 
 ### Register student
 POST {{api}}/student
 Content-Type: application/json
+
 {
-   "apellidos": "Villacreses",
-   "nombres": "Carlos",
-   "fechaNacimiento": "23-09-1998",
+   "apellidos": "Developer",
+   "nombres": "Challenge",
+   "fechaNacimiento": "1992-05-16",
    "ciudad": "Ecuador",
-   "correo": "carlos@gmail.com"
+   "correo": "dev456@gmail.com"
 }
+
+### Register schedule
+POST {{api}}/schedule
+Content-Type: application/json
+
+{
+	"idStd": "f93deeb7-781a-4878-9bdf-0fe9289fe0c8",
+	"courses": [
+      {
+         "desiredCourse": "PortfolioConstruction",
+         "requiredCourse": "PortfolioTheories"
+      }, {
+         "desiredCourse": "InvestmentManagement",
+         "requiredCourse": "Investment"
+      }, {
+         "desiredCourse": "Investment",
+         "requiredCourse": "Finance"
+      }, {
+         "desiredCourse": "PortfolioTheories",
+         "requiredCourse": "Investment"
+      }, {
+         "desiredCourse": "InvestmentStyle",
+         "requiredCourse": "InvestmentManagement"
+      }, {
+         "desiredCourse": "Finance",
+         "requiredCourse": "Programming"
+      }
+   ]
+}
+
+### Search schedule for students
+GET {{api}}/searchSchedule/f93deeb7-781a-4878-9bdf-0fe9289fe0c8
+Content-Type: application/json
