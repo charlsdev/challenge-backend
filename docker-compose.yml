@@ -15,6 +15,7 @@ services:
          - '3306:3306'
       volumes:
          - my-db:/var/lib/mysql
+         - ./db/coursesdb.sql:/docker-entrypoint-initdb.d/coursesdb.sql
       logging:
          driver: none
 
