@@ -9,7 +9,7 @@ const {
    signupUser
 } = require('../controllers/index.controllers')
 
-// const checkIfAuthenticated = require('../middleware/tokenFirebase')
+// const checkAuth = require('../middleware/tokenFirebase')
 
 // Ruta inicial
 router.get('/', welcomePage)
@@ -18,12 +18,12 @@ router.get('/', welcomePage)
 router.post('/signup', signupUser)
 
 // Ruta para guardar un estudiante
-router.post('/student', /*checkIfAuthenticated,*/ saveStudents)
+router.post('/student', /*checkAuth,*/ saveStudents)
 
 // Ruta para registrar el horario de un estudiante
-router.post('/schedule', /*checkIfAuthenticated,*/ saveSchedule)
+router.post('/schedule', /*checkAuth,*/ saveSchedule)
 
 //Ruta para listar en orden el horario asignado al estudiante
-router.get('/searchSchedule/:idStd', /*checkIfAuthenticated,*/ searchSchedule)
+router.get('/searchSchedule/:idStd', /*checkAuth,*/ searchSchedule)
 
 module.exports = router
