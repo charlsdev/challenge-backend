@@ -41,7 +41,7 @@ Si todo se ejecutó de manera correcta la base de datos se creará de manera aut
 
 En tal caso de mantener las credenciales por defecto, serán las siguientes:
 
-```properties
+```markdown
 User root:
 > username: root
 > password: devchallenge
