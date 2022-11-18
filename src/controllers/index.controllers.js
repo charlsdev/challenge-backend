@@ -36,7 +36,7 @@ idxCtrl.signupUser = async (req, res) => {
 
       return res.status(200).json({
          msg: 'Autenticación exitosa',
-         data: resp
+         token: resp
       })
    } catch (e) {
       console.error(e)

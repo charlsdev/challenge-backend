@@ -14,7 +14,7 @@ const {
 // Ruta inicial
 router.get('/', welcomePage)
 
-// Ruta para loguearse
+// Ruta para registrarse y obtener el token
 router.post('/signup', signupUser)
 
 // Ruta para guardar un estudiante
