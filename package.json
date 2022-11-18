@@ -6,7 +6,7 @@
    "scripts": {
       "start": "node src/index.js",
       "dev": "nodemon src/index.js --config nodemon.json",
-      "test": "cross-env NODE_ENV=test && jest --silent --detectOpenHandles"
+      "test": "cross-env NODE_ENV=testdb && jest --silent --detectOpenHandles"
    },
    "keywords": [],
    "author": "",

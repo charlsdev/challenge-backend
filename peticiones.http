@@ -15,6 +15,7 @@ GET {{api}}
 ### Register student
 POST {{api}}/student
 Content-Type: application/json
+Authorization: Bearer rRwTdRQOsRXsf89KqWTfqJxik6q2
 
 {
    "apellidos": "Developer",
@@ -29,7 +30,7 @@ POST {{api}}/schedule
 Content-Type: application/json
 
 {
-	"idStd": "f93deeb7-781a-4878-9bdf-0fe9289fe0c8",
+	"idStd": "725de9af-c307-4df6-9eed-8582f4e2cda3",
 	"courses": [
       {
          "desiredCourse": "PortfolioConstruction",
@@ -54,5 +55,5 @@ Content-Type: application/json
 }
 
 ### Search schedule for students
-GET {{api}}/searchSchedule/f93deeb7-781a-4878-9bdf-0fe9289fe0c8
+GET {{api}}/searchSchedule/725de9af-c307-4df6-9eed-8582f4e2cda3
 Content-Type: application/json
