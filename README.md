@@ -24,10 +24,10 @@ Antes de generar la base de datos es necesario colocar nuestras propias credenci
 ```properties
 docker-compose.yml
 
-> MYSQL_DATABASE: 'tu_db'
-> MYSQL_USER: 'user'
-> MYSQL_PASSWORD: 'pass'
-> MYSQL_ROOT_PASSWORD: 'pass_root'
+> MYSQL_DATABASE: 'coursesdb'
+> MYSQL_USER: 'dev'
+> MYSQL_PASSWORD: 'mypassdev'
+> MYSQL_ROOT_PASSWORD: 'devchallenge'
 ```
 
 Luego de ello generamos la base de datos del contener de docker con el comando:
@@ -57,19 +57,19 @@ Una ves configurado todos los pasos anteriores, se procede a configurar las vari
 
 ```properties
 Variables de la conexión de la DB
-> DB_HOST=''
-> DB_PORT=''
-> DB_NAME=''
-> DB_USER=''
-> DB_PASSWORD=''
+> DB_HOST=localhost
+> DB_PORT=3306
+> DB_NAME=coursesdb
+> DB_USER=root
+> DB_PASSWORD=devchallenge
 
 Variable para el cambio de DB para los test
-> NODE_ENV=''
+> NODE_ENV=
 ```
 
 ## ***Firebase*** 🔥
 
-Para poder usar el servicio de autenticación de firebase se debe de generar lsa credenciales desde la pagina oficial, el cual arrojará un archivo JSON, con los datos necesarios de permisos de conexión.
+Para poder usar el servicio de autenticación de firebase se debe de generar las credenciales desde la pagina oficial, el cual arrojará un archivo *[JSON](./firebaseCredentials.example.json)*, con los datos necesarios de permisos de conexión.
 
 ## ***Ejecutar el proyecto*** 🚧
 
@@ -87,9 +87,29 @@ Y en tal caso quisieramos correr los test, lo ejecutamos con el comando:
 npm run test
 ```
 
-Y el archivo *peticiones.http* es el que contiene los query para probar cada uno de los endpoints del proyecto.
+Y el archivo *[peticiones.http](./peticiones.http)* es el que contiene los query para probar cada uno de los endpoints del proyecto.
 
-> **NOTA:** Si lo desean mejorar no hay problema, estaré al pendiente ante algún cambio que se realice.
+## ***Tomar en cuenta*** 👀
+
+- ***NOTA #1:*** En cada petición del archivo ***[.http](./peticiones.http)*** o de los *test*, se deberá de copiar el ID del estudainte por lo que ese será la relación entre tablas.
+
+- ***NOTA #2:*** Las credenciales declaradas dentro del ***[README](./README.md)*** son las originales, pero si lo desean en producción deben de agregarles sus propias credenciales y no divulgarlas.
+
+- ***NOTA #3:*** Si lo desean mejorar no hay problema, estaré al pendiente ante algún cambio que se realice.
+
+## ***Errores o bugs no resueltos*** 🤯❌
+
+***BUG #1:*** *La sintaxis de verificación según la documentación está correcta, pero no se sabe del porque el error. Por ello cada ruta tiene comentado el middleware de protección.*
+
+```json
+{
+   "errorInfo": {
+      "code": "auth/argument-error",
+      "message": "Decoding Firebase ID token failed. Make sure you passed the entire string JWT which represents an ID token. See https://firebase.google.com/docs/auth/admin/verify-id-tokens for details on how to retrieve an ID token."
+   },
+   "codePrefix": "auth"
+}
+```
 
 ## License
 
